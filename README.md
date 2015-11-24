@@ -89,6 +89,6 @@ void MobileInput ()
                     Camera.main.transform.Translate (0, 0, move * Time.deltaTime);
                 }
             }
-        }//end for
-    }//end else if 
-}//end void
+        }
+    }
+}
