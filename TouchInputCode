@@ -42,6 +42,12 @@ public class TouchInput : MonoBehaviour
             
             }
            
+           if (touchPos.x >widthScreen)
+            {
+
+                player.transform.Translate(Vector3.right * 5 * Time.deltaTime);//遊戲物件由左向右移動
+
+            }
             
 }
         }
