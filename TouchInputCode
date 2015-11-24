@@ -1,10 +1,11 @@
 using UnityEngine;
 using System.Collections;
 
-public class MyDrag : MonoBehaviour
+public class TouchInput : MonoBehaviour
 {
     double widthScreen = Screen.width;//螢幕的寬度
     public Vector2 touchPos = new Vector2();//存放觸控位置資訊的變數
+    public GameObject player;//遊戲物件
     void Start()
     { 
     
@@ -32,11 +33,15 @@ public class MyDrag : MonoBehaviour
                 touchPos = Input.touches[0].position;//紀錄第一次的觸控位置
                 
             }
-            else if (Input.touches[0].phase == TouchPhase.Moved)//這時如果手指頭移動的話就執行下面的程式碼
+
+
+            if (touchPos.x < widthScreen)
             {
-                
+
+                player.transform.Translate(Vector3.left * 5 * Time.deltaTime);//遊戲物件由右向左移動
             
             }
+           
             
 }
         }
