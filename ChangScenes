@@ -1,0 +1,30 @@
+using UnityEngine;
+using System.Collections;
+
+public class ChangeScene : MonoBehaviour {
+    public GameObject[] PreFabArray;//預置物件陣列
+    
+	// Use this for initialization
+	void Awake () {
+       //DontDestroyOnLoad(transform.gameObject);
+     
+	}
+	
+	// Update is called once per frame
+	void Update () 
+    {
+	
+	}
+    public void thisButtonOnclick()//當這個按鈕被點擊的時候就觸發
+    {
+
+        Application.LoadLevelAsync("AddCompont");//切換到增加遊戲物件的選單
+    
+    }
+    public void BackToMainMenu()//當這個按鈕被點擊的時候就觸發
+    {
+
+        Application.LoadLevelAsync("MainScene");//返回開發介面
+    
+    }
+}
