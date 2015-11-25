@@ -8,6 +8,14 @@ public class DontDestroyOnload : MonoBehaviour {
     public int Force=2500;//要施加多少力道
     public float Timer;//增加一個整數的計時器
     public Transform Cube;//方塊物件
+    public Transform Plane;//平面物件
+    public Transform Sphere;//圓球物件
+
+    /***************燈光物件********************/
+    public Transform Directionllight;//方向光物件
+    public Transform Pointlight;//點光源物件
+    public Transform Spotlight;//聚光燈物件
+
     void Awake()
     {
         DontDestroyOnLoad(transform.gameObject);//設定切換場景的時候，不要摧毀該物件
@@ -17,8 +25,7 @@ public class DontDestroyOnload : MonoBehaviour {
        
         AddforceToUp = GetComponent<Rigidbody>();
 	}
-	
-	// Update is called once per frame
+
 	void Update () {
        
         if (FunctionActive == true)
@@ -57,11 +64,50 @@ public class DontDestroyOnload : MonoBehaviour {
         }
     
     }
-    public void CopyGameObject()//創建遊戲物件
+
+    public void CopyCube()//創建方塊物件
     {
 
         Instantiate(Cube, new Vector3(105, 100, -14), Quaternion.identity);
 
-    
+
     }
+    public void CopyPlane()//創建平面物件
+    {
+
+        Instantiate(Plane, new Vector3(105, 100, -14), Quaternion.identity);
+
+
+    }
+    public void CopySphere()//創建圓球物件
+    {
+
+        Instantiate(Sphere, new Vector3(105, 100, -14), Quaternion.identity);
+
+    }
+
+
+
+
+    /***************創建燈光********************/
+    public void CopyDirectionllight()//創建方向光物件
+    {
+
+        Instantiate(Directionllight, new Vector3(105, 100, -14), Quaternion.identity);
+
+    }
+    public void CopyPointlight()//創建點光源物件
+    {
+
+        Instantiate(Pointlight, new Vector3(105, 100, -14), Quaternion.identity);
+
+    }
+    public void CopySpotlight()//創建聚光燈物件
+    {
+
+        Instantiate(Spotlight, new Vector3(105, 100, -14), Quaternion.identity);
+
+    }
+
+
 }
