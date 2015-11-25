@@ -1,0 +1,52 @@
+using UnityEngine;
+using System.Collections;
+using UnityEngine.UI;
+public class Toggle : MonoBehaviour {
+    public int SwitchControl;//多項式控制
+    public GameObject ToggleOpen, ToggleClose;//開,關
+    public GameObject Pointlight;//點光源
+
+
+    void Start ()
+    {
+
+        Pointlight= GameObject.Find("Point light(Clone)");
+
+
+
+    }  
+    void Update () 
+    {
+
+        switch (SwitchControl)
+        {
+            
+            case 0:
+                ToggleClose.SetActive(false); ;//關設為false
+                break;
+            case 1:
+                ToggleClose.SetActive(true);//關設為true
+                
+                break;
+        }
+
+    }
+
+
+   public void ToggleControl()
+    {
+
+        if (SwitchControl == 0)//如果第二個開關是關閉的狀態的話
+        {
+            SwitchControl =1;//設定二個開關開啟
+        }
+        else 
+        {
+            SwitchControl = 0;//設定二個開關開啟
+        }
+
+    }
+
+   
+    
+}
