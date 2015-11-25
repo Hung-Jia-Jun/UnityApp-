@@ -1,0 +1,16 @@
+using UnityEngine;
+using System.Collections;
+using UnityEngine.UI;
+using UnityEngine.Events;
+using UnityEditor;
+public class fontsize : MonoBehaviour {
+
+	[@MenuItem("AssetBundles/Build AssetBundles")]
+	static void BuildAndroid() 
+	{
+
+		string[] scenes = { "Assets/CharMenu.unity"};
+		BuildPipeline.BuildPlayer(scenes, "your.apk", BuildTarget.Android, BuildOptions.None);
+	}
+
+}
