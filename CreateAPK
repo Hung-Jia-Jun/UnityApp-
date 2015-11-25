@@ -3,14 +3,15 @@ using System.Collections;
 using UnityEngine.UI;
 using UnityEngine.Events;
 using UnityEditor;
-public class fontsize : MonoBehaviour {
+public class CreateAPK : MonoBehaviour
+{
 
-	[@MenuItem("AssetBundles/Build AssetBundles")]
-	static void BuildAndroid() 
-	{
+  
+    static void BuildAndroid()
+    {
 
-		string[] scenes = { "Assets/CharMenu.unity"};
-		BuildPipeline.BuildPlayer(scenes, "your.apk", BuildTarget.Android, BuildOptions.None);
-	}
+        string[] scenes = { "Assets/AddCompont.unity", "Assets/MainScene.unity" };
+        BuildPipeline.BuildPlayer(scenes, "your.apk", BuildTarget.Android, BuildOptions.None);
+    }
 
 }
